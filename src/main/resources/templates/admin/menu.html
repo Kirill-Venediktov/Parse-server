@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<nav>
+    <ul>
+        <li><a href="/admin/addGoods">Добавить ссылку на отслеживание</a> </li>
+        <li><a href="/admin/statistics">Статистика по отслеживаемым товарам</a> </li>
+    </ul>
+</nav>
+
+    <form th:action="@{/logout}" method="get">
+        <button class="btn btn-md btn-danger btn-block" name="registration"
+            type="Submit">Logout
+        </button>
+    </form>
+</body>
+</html>

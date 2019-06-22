@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h3>Форма добавления товара для отлеживания</h3>
+
+<p th:if="${addInfo}">Товар добавлен</p>
+
+<form method="post", th:action=@{/admin/addGoods}>
+    <input type="text", th:value="*{link}" name = "link" placeholder="Введите ссылку на отслеживаение">
+    <p><input type="submit", value="Добавить"></p>
+
+</form>
+
+
+<p><a href="/admin/menu">Назад</a> </p>
+
+</body>
+</html>

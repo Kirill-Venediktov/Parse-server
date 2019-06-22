@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistics</title>
+</head>
+<body>
+<h2>Goods</h2>
+
+<table border="1">
+    <tr>
+        <th>Название товара</th>
+        <th>Цена в валюте</th>
+        <th>Валюта</th>
+        <th>Цена в рублях</th>
+        <th>Дата</th>
+    </tr>
+    <tr th:each = "good: ${allGoods}">
+        <td th:text="${good.title}"></td>
+        <td th:text="${good.price}"></td>
+        <td th:text="${good.currency}"></td>
+        <td th:text="${good.priceRub}"></td>
+        <td th:text="${good.date}"></td>
+    </tr>
+</table>
+
+<form method="post" th:action="@{/admin/statistics}">
+
+    <div>
+        <select name="goodsId">
+            <option th:each="good : ${allGoods}"
+                    th:text="${good.title}"
+                    th:value="${good.id}">
+            </option>
+        </select>
+    </div>
+
+    <div>
+        <input type="submit" value="Получить">
+    </div>
+
+</form>
+
+<div th:if="${goods}">
+<table border="1">
+    <tr>
+        <th>Название товара</th>
+        <th>Цена в валюте</th>
+        <th>Валюта</th>
+        <th>Цена в рублях</th>
+        <th>Дата</th>
+    </tr>
+    <tr th:each = "good: ${goods}">
+        <td th:text="${good.title}"></td>
+        <td th:text="${good.price}"></td>
+        <td th:text="${good.currency}"></td>
+        <td th:text="${good.priceRub}"></td>
+        <td th:text="${good.date}"></td>
+    </tr>
+</table>
+</div>
+
+<!--<div th:if="${goods}">-->
+    <!--<p th:text="${goods.title}"></p>-->
+    <!--<p th:text="${goods.price}"></p>-->
+    <!--<p th:text="${goods.currency}"></p>-->
+    <!--<p th:text="${goods.priceRub}"></p>-->
+    <!--<p th:text="${goods.date}"></p>-->
+<!--</div>-->
+
+<!--<form method="get" th:action="@{/admin/statistics}">-->
+
+
+    <!---->
+<!--</form>-->
+
+
+
+
+<!--<a th:hreaf:="@{/displayGraph}">Graph</a>-->
+
+<!--<script type="text/javascript" th:src="@{/js/graph.js}" />-->
+
+<!--<script src="https://code.highcharts.com/highcharts.js"></script>-->
+<!--<script src="https://code.highcharts.com/modules/exporting.js"></script>-->
+<!--<script src="https://code.highcharts.com/modules/export-data.js"></script>-->
+
+<!--<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>-->
+
+
+
+<p><a href="/admin/menu">Назад</a> </p>
+</body>
+</html>
