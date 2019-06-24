@@ -30,8 +30,8 @@ public class GoodsService {
             for(Goods ugoods : uniqueGoods){
                 if (goods.getTitle().equals(ugoods.getTitle())){
                     if (goods.getDate().isAfter(ugoods.getDate())){
-                        client.getGoods().remove(ugoods);
-                        client.getGoods().add(goods);
+                        uniqueGoods.remove(ugoods);
+                        uniqueGoods.add(goods);
                     }
                     count = 1;
                     break;

@@ -86,12 +86,8 @@ public class ParserThread implements Runnable {
             goods.setDate(LocalDate.now());
             goods.getClients().add(client);
 
-//            List<Client> clients = new ArrayList<>();
-//            clients.add(client);
-//            goods.setClients(clients);
 
-//            goodsRepository.save(goods);
-
+            goodsRepository.save(goods);
             client.getGoods().add(goods);
             clientRepository.save(client);
 

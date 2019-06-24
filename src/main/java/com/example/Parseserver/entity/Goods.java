@@ -54,7 +54,7 @@ public class Goods {
 
     //
     @ManyToMany(mappedBy = "goods")
-    private List<Client> clients = new ArrayList<>();
+    private List<Client> clients = new CopyOnWriteArrayList<>();
 //
 //    public List<Client> getClients() {
 //        return clients;

@@ -42,7 +42,7 @@ public class Client {
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "client_goods", joinColumns = @JoinColumn(name = "client_id"),
             inverseJoinColumns = @JoinColumn(name = "goods_id"))
-    private List<Goods> goods = new ArrayList<>();
+    private List<Goods> goods = new CopyOnWriteArrayList<>();
 
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "client_role", joinColumns = @JoinColumn(name = "client_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
